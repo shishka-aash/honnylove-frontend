@@ -1,0 +1,134 @@
+.header {
+    background-color: var(--white);
+    box-shadow: 0 2px 20px rgba(247, 109, 143, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--dark-pink);
+    font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif;
+}
+
+/* Если хотите скрыть текст логотипа на мобильных */
+@media (max-width: 768px) {
+    .logo-text {
+        display: none;
+    }
+
+    .logo-image {
+        height: 35px;
+    }
+}
+
+.nav {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    position: relative;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.1rem;
+}
+
+.nav-link:hover {
+    color: var(--dark-pink);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--dark-pink);
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.badge {
+    background-color: var(--dark-pink);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    gap: 4px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--dark-pink);
+    transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        transform: translateY(-10px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+    }
+
+    .nav-open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
