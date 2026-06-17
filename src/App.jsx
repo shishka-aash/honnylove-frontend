@@ -8,7 +8,6 @@ import Profile from './pages/Profile/Profile';
 import Register from './pages/Register/Register';
 import Cart from './pages/Cart/Cart';
 import Favorites from './pages/Favorites/Favorites';
-#import UserSearch from './pages/UserSearch/UserSearch';
 import './App.css';
 
 function App() {
